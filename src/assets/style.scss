@@ -1,0 +1,54 @@
+@function r($n) {
+    @return ($n * 2 / 100) + rem;
+}
+*{
+    margin: 0;padding: 0;
+    touch-action: pan-y;
+}
+html, body{
+    width: 100%;
+}
+em{
+    font-style: normal;
+}
+
+body{
+    padding-top: r(20);
+}
+.item{
+    margin:0 r(20) r(20);
+    background: #FDF6F2;
+    border-radius: r(12);padding:r(18) r(16) r(30);
+    .label{
+        font-size: r(17);
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #B56137;
+        line-height: r(24);
+    }
+    .cont{
+        display: flex;align-items: center;margin-top:r(16);
+        img{
+            flex: 0 0 r(62);height: r(62);
+            margin-right: r(8);
+        }
+        p{
+            flex:1;
+            font-size: r(15);
+            color: #B56137;
+            line-height: r(22);
+        }
+    }
+    &.zi-shen{
+        background: #F5F7FA;
+        .label{
+            color: #495F8C;
+        }
+    }
+    &.you-xuan{
+        background: #FFF9EA;
+        .label{
+            color: #CC8204;
+        }
+    }
+}
