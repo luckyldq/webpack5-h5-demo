@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const { resolve } = require('path');
 
 module.exports = {
     entry:path.join(__dirname, './src/main.js'),
@@ -21,7 +22,8 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new htmlWebpackPlugin({ // 根据模板文件在内存中生成html，会自动引入打包后的其他资源文件
             template: "./src/index.html", // path.join(__dirname, './src/index.html'),
-            filename:'index.html' // 指定生成页面的名称,      
+            filename:'index.html', // 指定生成页面的名称,
+            favicon: resolve(__dirname, 'src/favicon.ico')
         })
     ],
     module:{
